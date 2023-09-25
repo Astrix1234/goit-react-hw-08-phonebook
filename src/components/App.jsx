@@ -1,36 +1,22 @@
-import React, { useEffect } from 'react';
-import css from './App.module.css';
-import ContactsForm from './ContactsForm/ContactsForm';
-import ContactList from './ContactList/ContactList';
-import Filter from './Filter/Filter';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { selectIsLoading, selectError } from 'redux/selectors';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { SharedLayout } from './SharedLayout/SharedLayout';
 
-const App = () => {
-  const dispatch = useDispatch();
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage'));
 
-  const isLoading = useSelector(selectIsLoading);
-  const isError = useSelector(selectError);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
+export const App = () => {
   return (
-    <div className={css.phonebook}>
-      <h1>Phonebook</h1>
-      <ContactsForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading && !isError && (
-        <p style={{ marginTop: '15px', fontSize: '18px' }}>
-          Request in progress...
-        </p>
-      )}
-      <ContactList />
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        {/* <Route index element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="*" element={<HomePage />} /> */}
+      </Route>
+    </Routes>
   );
 };
-
-export default App;
