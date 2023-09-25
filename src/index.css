@@ -1,5 +1,5 @@
 @import-normalize;
-/* bring in normalize.css styles */
+
 
 * {
   margin: 0;
@@ -19,6 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: gray;
+  background-image: linear-gradient(to bottom right, #3a1c71, #d76d77, #ffaf7b);
 }
 
 code {

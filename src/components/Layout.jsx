@@ -5,7 +5,14 @@ import { Suspense } from 'react';
 
 export const Layout = () => {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <div
+      style={{
+        maxWidth: 960,
+        margin: '0 auto',
+        padding: '0 16px',
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+      }}
+    >
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />
