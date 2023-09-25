@@ -2,9 +2,9 @@ import { nanoid } from 'nanoid';
 import './ContactsForm.module.css';
 import InputLabel from '../InputLabel/InputLabel';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/contactsSlice';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { setFilter } from 'redux/contacts/contactsSlice';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 import React, { useState } from 'react';
 
 const ContactsForm = () => {
