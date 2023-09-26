@@ -19,9 +19,8 @@ export const Contacts = () => {
 
   return (
     <div className={css.phonebook}>
-      <h1>Phonebook</h1>
       <ContactsForm />
-      <h2>Contacts</h2>
+      <p className={css.find}>Find contact</p>
       <Filter />
       {isLoading && !isError && (
         <p style={{ marginTop: '15px', fontSize: '18px' }}>

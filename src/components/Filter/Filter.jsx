@@ -1,4 +1,4 @@
-import './Filter.module.css';
+import css from './Filter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilter } from 'redux/contacts/contactsSlice';
 import { selectFilter } from 'redux/contacts/selectors';
@@ -11,7 +11,13 @@ const Filter = () => {
     dispatch(setFilter(e.target.value));
   };
 
-  return <input value={filter} onChange={handleFilterChange} />;
+  return (
+    <input
+      className={css.inputFilter}
+      value={filter}
+      onChange={handleFilterChange}
+    />
+  );
 };
 
 export default Filter;

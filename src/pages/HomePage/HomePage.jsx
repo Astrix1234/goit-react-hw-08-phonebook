@@ -2,7 +2,6 @@ const styles = {
   container: {
     minHeight: '100vh',
     display: 'flex',
-
     justifyContent: 'center',
   },
   title: {

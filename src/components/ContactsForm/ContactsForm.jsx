@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import './ContactsForm.module.css';
+import css from './ContactsForm.module.css';
 import InputLabel from '../InputLabel/InputLabel';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/contacts/contactsSlice';
@@ -39,7 +39,11 @@ const ContactsForm = () => {
   const numberId = nanoid();
 
   return (
-    <form onSubmit={handleSubmit} onClick={() => dispatch(setFilter(''))}>
+    <form
+      className={css.formBook}
+      onSubmit={handleSubmit}
+      onClick={() => dispatch(setFilter(''))}
+    >
       <InputLabel
         id={nameId}
         name="name"
@@ -58,7 +62,9 @@ const ContactsForm = () => {
         value={number}
         onChange={handleChange}
       />
-      <button type="submit">Add contact</button>
+      <button className={css.buttonBook} type="submit">
+        Add contact
+      </button>
     </form>
   );
 };

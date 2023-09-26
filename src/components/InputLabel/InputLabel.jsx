@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './InputLabel.module.css';
+import css from './InputLabel.module.css';
 
 const InputLabel = ({ name, value, onChange, type, pattern, title, id }) => {
   return (
-    <label htmlFor={id}>
+    <label className={css.labelBook} htmlFor={id}>
       {name}
       <input
+        className={css.inputBook}
         id={id}
         type={type}
         name={name}
