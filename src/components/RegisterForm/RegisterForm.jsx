@@ -1,15 +1,16 @@
 import { useDispatch } from 'react-redux';
-import { logIn } from 'redux/auth/operations';
-import css from './LoginForm.module.css';
+import { register } from 'redux/auth/operations';
+import css from './RegisterForm.module.css';
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
-      logIn({
+      register({
+        name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
@@ -20,6 +21,10 @@ export const LoginForm = () => {
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <label className={css.label}>
+        Username
+        <input className={css.input} type="text" name="name" />
+      </label>
+      <label className={css.label}>
         Email
         <input className={css.input} type="email" name="email" />
       </label>
@@ -28,7 +33,7 @@ export const LoginForm = () => {
         <input className={css.input} type="password" name="password" />
       </label>
       <button className={css.button} type="submit">
-        Log In
+        Register
       </button>
     </form>
   );

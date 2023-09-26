@@ -1,7 +1,7 @@
-import { NavLink as OriginalNavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const NavLink = styled(OriginalNavLink)`
+const Link = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
   padding: 24px 12px;
@@ -28,12 +28,8 @@ const NavLink = styled(OriginalNavLink)`
 export const AuthNav = () => {
   return (
     <div>
-      <NavLink activeClassName="active" to="/register">
-        Register
-      </NavLink>
-      <NavLink activeClassName="active" to="/login">
-        Log In
-      </NavLink>
+      <Link to="/register">Register</Link>
+      <Link to="/login">Log In</Link>
     </div>
   );
 };
