@@ -23,7 +23,7 @@ export const Contacts = () => {
       <p className={css.find}>Find contact</p>
       <Filter />
       {isLoading && !isError && (
-        <p style={{ marginTop: '15px', fontSize: '18px' }}>
+        <p style={{ marginTop: '15px', fontSize: '18px', color: 'white' }}>
           Request in progress...
         </p>
       )}
