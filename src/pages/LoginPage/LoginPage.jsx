@@ -1,16 +1,10 @@
 import { Helmet } from 'react-helmet';
 import { LoginForm } from 'components/LoginForm/LoginForm';
-
-const styles = {
-  container: {
-    minHeight: '100vh',
-    display: 'flex',
-  },
-};
+import css from './LoginPage.module.css';
 
 export default function LoginPage() {
   return (
-    <div style={styles.container}>
+    <div className={css.container}>
       <Helmet>
         <title>Login</title>
       </Helmet>

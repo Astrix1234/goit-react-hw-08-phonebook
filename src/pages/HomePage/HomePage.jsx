@@ -1,27 +1,15 @@
-const styles = {
-  container: {
-    minHeight: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-    color: 'white',
-    marginTop: '300px',
-  },
-  emoji: {
-    fontSize: '100px',
-  },
-};
+import css from './HomePage.module.css';
+import { Helmet } from 'react-helmet';
 
 export default function HomePage() {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>
+    <div className={css.container}>
+      <Helmet>
+        <title>Contacts manager</title>
+      </Helmet>
+      <h1 className={css.title}>
         CONTACTS MANAGER WELCOME PAGE{' '}
-        <span role="img" aria-label="Greeting icon" style={styles.emoji}>
+        <span role="img" aria-label="Greeting icon" className={css.emoji}>
           📚
         </span>
       </h1>

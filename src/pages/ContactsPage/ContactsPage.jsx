@@ -1,18 +1,12 @@
 import { Helmet } from 'react-helmet';
 import { Contacts } from 'components/Contacts/Contacts';
-
-const styles = {
-  container: {
-    minHeight: '100vh',
-    display: 'flex',
-  },
-};
+import css from './ContactsPage.module.css';
 
 export default function ContactsPage() {
   return (
-    <div style={styles.container}>
+    <div className={css.container}>
       <Helmet>
-        <title>Your tasks</title>
+        <title>Your contacts</title>
       </Helmet>
       <Contacts />
     </div>
